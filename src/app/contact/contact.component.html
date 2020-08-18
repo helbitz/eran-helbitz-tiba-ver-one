@@ -1,0 +1,65 @@
+
+
+<mat-card-header>
+  <mat-toolbar class="toolbar">
+    <mat-card-title>Todo Model</mat-card-title>
+    <span class="toolbar-spacer"></span>
+    <mat-icon (click)="onNoClick()">cancel</mat-icon>
+  </mat-toolbar>
+</mat-card-header>
+<mat-card-content>
+  <div class="container">
+    <form name="modForm" [formGroup]="_contactForm" (submit)="onSubmit()" onsubmit="return validateForm()" method="post" required>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <label>Task</label>
+            <input name="tx1" type="text" formControlName="taskName" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label>Task's Category</label>
+            <select #rate ngModel="Other" name="tx2" class="form-control" formControlName="category" _ngcontent-ega-c45="" name="cats" ng-reflect-name="selectCat" ng-reflect-model="">
+              <option value="Work" ng-reflect-value="Work">Work</option>
+              <option value="Personal" ng-reflect-value="Personal">Personal</option>
+              <option value="New Year's Resolution" ng-reflect-value="New Year's Resolution">New Year's Resolution</option>
+              <option value="Other" selected ng-reflect-value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+       <!--  <div class="row">
+          <div class="col-md-6">
+            <label>Task Date</label>
+            <input type="date" formControlName="date" class="form-control" value=today.getDate() disabled>
+          </div>
+          <div class="col-md-6">
+            <label>Task Completed?</label>
+            <input type="checkbox" formControlName="isComplete" class="form-control">
+          </div>
+        </div> 
+      
+      
+      
+      
+      
+      _ngcontent-ega-c45=""
+      
+      
+      
+      
+      
+      -->
+
+        <div class="row">
+          <div class="col-md-6">
+          <button type="submit" class="btn btn-success" id="save">
+            <mat-icon>save</mat-icon>
+          </button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</mat-card-content>
+
+<!--   -->
