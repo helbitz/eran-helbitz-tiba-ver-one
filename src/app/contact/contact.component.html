@@ -9,20 +9,20 @@
 </mat-card-header>
 <mat-card-content>
   <div class="container">
-    <form name="modForm" [formGroup]="_contactForm" (submit)="onSubmit()" onsubmit="return validateForm()" method="post" required>
+    <form name="modForm" [formGroup]="_contactForm" (submit)="onSubmit()" ngNativeValidate onsubmit="return validateForm()" method="post" required>
       <div class="form-group">
         <div class="row">
           <div class="col-md-6">
             <label>Task</label>
-            <input name="tx1" type="text" formControlName="taskName" class="form-control">
+            <input name="tx1" type="text" formControlName="taskName" class="form-control" oninput="validate(this)" required>
           </div>
           <div class="col-md-6">
             <label>Task's Category</label>
-            <select #rate ngModel="Other" name="tx2" class="form-control" formControlName="category" _ngcontent-ega-c45="" name="cats" ng-reflect-name="selectCat" ng-reflect-model="">
+            <select #rate name="tx2" class="form-control" formControlName="category" _ngcontent-ega-c45="" name="cats" ng-reflect-name="selectCat" ng-reflect-model="" required>
               <option value="Work" ng-reflect-value="Work">Work</option>
               <option value="Personal" ng-reflect-value="Personal">Personal</option>
               <option value="New Year's Resolution" ng-reflect-value="New Year's Resolution">New Year's Resolution</option>
-              <option value="Other" selected ng-reflect-value="Other">Other</option>
+              <option value="Other" ng-reflect-value="Other">Other</option>
             </select>
           </div>
         </div>
@@ -38,7 +38,7 @@
         </div> 
       
       
-      
+      onKeyDown="javascript: var keycode = keyPressed(event); if(keycode==32){ return false; }"
       
       
       _ngcontent-ega-c45=""

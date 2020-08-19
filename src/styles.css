@@ -9,6 +9,26 @@
 
 }
 
+th {
+    cursor: pointer;
+}
+
+mat-icon {
+
+    cursor: pointer;
+}
+body  {
+    background-image: url("https://cdn.lowgif.com/medium/1f3f085b3a84ed61-.gif");
+    background-color: #cccccc;
+  }
+
+  mat-card {
+width: 80%;
+position: fixed;
+margin: auto;
+  }
+
+
 .toolbar-spacer{
     flex: 1 1 auto;
 }

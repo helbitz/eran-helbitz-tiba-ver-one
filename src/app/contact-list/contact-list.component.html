@@ -9,14 +9,12 @@
 
   <mat-card-content>
     <div class="container">
-      <table class="table">
-        <thead>
-          <th>Task</th>
-          <th>Task's Category</th>
-          <th>Task Date</th>
+      <table id="toDoList" class="table" >
+          <th id="el1" class="headT" onclick="w3.sortHTML('#toDoList', '.item', 'td:nth-child(1)')" >Task</th>
+          <th id="el2" class="headT"  onclick="w3.sortHTML('#toDoList', '.item', 'td:nth-child(2)')" >Task's Category</th>
+          <th id="el3" class="headT" onclick="w3.sortHTML('#toDoList', '.item', 'td:nth-child(3)')" >Task Date</th>
          <!--  <th>Task Completed?</th>-->
-        </thead>
-        <tr *ngFor="let Contact of ContactList">
+        <tr *ngFor="let Contact of ContactList" class="item">
           <td>{{Contact.taskName}}</td>
           <td>{{Contact.category}}</td>
           <td>{{Contact.date | date}}</td>
@@ -31,4 +29,15 @@
 </mat-card>
 
 
-<!--  -->
+<!-- const table = th.closest('table');
+      Array.from(table.querySelectorAll('tr:nth-child(n)'))
+     .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+     .forEach(tr => table.appendChild(tr) );
+    
+    
+    onclick="w3.sortHTML('#toDoList', '.item', 'td:nth-child(1)')"
+
+
+     onclick="console.log(1)" style="cursor:pointer" sortable="taskName" (sort)="onSort(onclick)" 
+    
+    -->

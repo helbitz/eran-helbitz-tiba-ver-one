@@ -2,6 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ContactService } from '../service/contact.service';
 import { ContactComponent } from '../contact/contact.component';
+import {Sort} from '@angular/material/sort';
+
+export interface Contact {
+  ID: number;
+  taskName: string;
+  category: string;
+  date: Date;
+  isComplete: boolean;
+}
 
 @Component({
   selector: 'app-contact-list',
@@ -15,8 +24,21 @@ export class ContactListComponent implements OnInit {
   constructor(private dialog?: MatDialog,
     private _contactService?: ContactService) { }
 
-  ngOnInit() {
-  }
+ 
+    elements: any = [];
+
+    ngOnInit() {
+      for (let i = 1; i <= 11; i++) {
+        this.elements.push({
+          id: i,
+          first: {nick: 'Nick ' + i, name: 'Name ' + i},
+          last: 'Name ' + i,
+          handle: 'Handle ' + i
+        });
+      }
+    }
+
+
   isComplete: boolean = false;
   
   

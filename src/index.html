@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
   <script>
     function validateForm() {
       var x = document.forms["modForm"]["tx1"];
@@ -10,6 +12,52 @@
         return false;
       }
     }
+
+
+    /*  function keyPressed(){
+var key = event.keyCode || event.charCode || event.which ;
+return key;
+    }
+*/
+
+function validate(input){
+  if(/^\s/.test(input.value))
+    input.value = '';
+}
+
+/*
+
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+
+const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+
+// do the work...
+document.querySelectorAll('.headT').forEach(th => th.addEventListener('click', (() => {
+    console.log(1)
+      const table = th.closest('table');
+      Array.from(table.querySelectorAll('tr:nth-child(n)'))
+     .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+     .forEach(tr => table.appendChild(tr) );
+})));
+
+
+
+window.onload=function(){
+   var el1 = document.getElementById("el1"); 
+   el1.addEventListener("click",console.log(1));
+   var el2 = document.getElementById("el2"); 
+   el2.addEventListener("click",console.log(2));
+   var el3 = document.getElementById("el3"); 
+   el3.addEventListener("click",console.log(3));
+
+}
+
+
+*/
+
+
     </script>
 
   <meta charset="utf-8">
